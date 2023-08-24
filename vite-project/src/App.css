@@ -1,0 +1,60 @@
+.image-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.like-dislike {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.like-dislike button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+.like-dislike button:hover {
+  background-color: #2580b3; /* Cor um pouco mais escura quando o botão é hover */
+}
+
+.like-dislike button.clicked {
+  background-color: #266691; /* Cor ainda mais escura quando o botão é clicado */
+}
+
+.message {
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
