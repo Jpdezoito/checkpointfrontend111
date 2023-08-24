@@ -22,6 +22,11 @@
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #45a049;
 }
 
 .errorMessage {
@@ -38,12 +43,21 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .colorCard {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 10px;
-  margin-top: 10px;
+  margin: 100px 10px; /* Margem superior e inferior de 100px, margem lateral de 10px */
+  width: 590px; /* Largura de 590px */
+  height: 258px; /* Altura de 258px */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
