@@ -19,7 +19,9 @@ function App() {
     return /^#[0-9A-Fa-f]{6}$/.test(code);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Evita o comportamento padrão do envio do formulário
+
     if (!colorName.trim() || !validateColorCode(colorCode)) {
       setErrorMessage('Por favor, verifique os dados inseridos no formulário');
       return;
@@ -33,23 +35,25 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <input
-        type="text"
-        value={colorName}
-        onChange={handleNameChange}
-        placeholder="Nome da Cor"
-        className={styles.colorInput}
-      />
-      <input
-        type="text"
-        value={colorCode}
-        onChange={handleCodeChange}
-        placeholder="Código da Cor (#000000)"
-        className={styles.colorInput}
-      />
-      <button className={styles.submitButton} onClick={handleSubmit}>
-        Enviar
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={colorName}
+          onChange={handleNameChange}
+          placeholder="Nome da Cor"
+          className={styles.colorInput}
+        />
+        <input
+          type="text"
+          value={colorCode}
+          onChange={handleCodeChange}
+          placeholder="Código da Cor (#000000)"
+          className={styles.colorInput}
+        />
+        <button type="submit" className={styles.submitButton}>
+          Enviar
+        </button>
+      </form>
 
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
 
