@@ -20,10 +20,15 @@ function App() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Evita o comportamento padrão do envio do formulário
+    event.preventDefault();
 
-    if (!colorName.trim() || !validateColorCode(colorCode)) {
-      setErrorMessage('Por favor, verifique os dados inseridos no formulário');
+    if (colorName.trim().length === 1) {
+      setErrorMessage('O nome da cor deve conter mais de uma letra');
+      return;
+    }
+
+    if (!validateColorCode(colorCode)) {
+      setErrorMessage('Por favor, insira um código de cor válido');
       return;
     }
 
@@ -42,6 +47,7 @@ function App() {
           onChange={handleNameChange}
           placeholder="Nome da Cor"
           className={styles.colorInput}
+          required
         />
         <input
           type="text"
